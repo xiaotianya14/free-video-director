@@ -1,0 +1,4 @@
+# dsh bundle patch: 注册 free-video-director 技能
+- insert:
+    - id: skill-free-video-director
+      name: dsh-skill-free-video-director

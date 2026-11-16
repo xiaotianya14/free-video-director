@@ -1,0 +1,51 @@
+{
+  "name": "local-video-studio",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "视频工坊",
+      "en": "Video studio"
+    },
+    "icon": "skill",
+    "contributes": {
+      "composer.actions": [
+        {
+          "id": "video-studio",
+          "label": {
+            "zh": "视频工坊",
+            "en": "Video"
+          },
+          "icon": "skill"
+        }
+      ],
+      "panels": [
+        {
+          "id": "video-studio-panel",
+          "title": {
+            "zh": "视频工坊",
+            "en": "Video studio"
+          },
+          "icon": "skill",
+          "placement": [
+            "chat.panel",
+            "features",
+            "plugin"
+          ]
+        }
+      ]
+    }
+  },
+  "description": "dsh-go 原生「视频工坊」面板：镜头列表/复制提示词/收最新视频/合成成片（free-video-director 配套）"
+}

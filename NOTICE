@@ -1,0 +1,29 @@
+free-video-director
+Copyright (c) 2026 xiaotianya14
+
+一、许可
+本项目的原创代码与文档采用 MIT 许可证（见 LICENSE）。
+docs/knowledge/ 目录内的技能文档来自开源项目 DirectorX
+（https://github.com/LaplaceYoung/dsh-directorx），按其 Apache License 2.0 授权收录，
+版权归原作者所有。Apache License 2.0 全文见 LICENSE-APACHE-2.0.txt。
+
+二、对收录内容的修改说明（Apache-2.0 §4(b) 要求）
+1. 新增 INDEX.md 索引；
+2. 移除 skill-creator 目录（其中包含第三方（Anthropic）说明文字的长段引用，授权不明确，不适合再分发）；
+3. 在 5 篇以艺术家姓名描述风格的动画文档顶部，增加了「仅作风格参考、非本人作品、无关联/背书」的声明区块（正文未改）；
+4. 除上述外，原文内容未作修改。
+
+关于艺术家姓名：文档中的姓名仅用于描述视觉风格参考，不表示其为作品或与本项目有任何关联；
+本项目生成提示词时要求使用视觉特征描述，不直接引用真人姓名。
+
+三、商标与第三方名称
+文档中出现的第三方名称与商标——包括但不限于「豆包 / Doubao」「Seedance」「即梦」
+「Kling 可灵」「MiniMax」「Sora」「Netflix」「Claude / Anthropic」以及其它品牌、产品、平台名——
+均为其各自所有者的商标或名称，仅用于描述与说明，不表示任何隶属、合作、赞助或背书关系。
+
+四、无隶属声明
+本项目为独立开源项目，与字节跳动（豆包）、DirectorX 项目及其作者，以及上述任何第三方公司
+均无隶属或合作关系。
+
+五、隐私
+知识库中不含 API Key、访问令牌、手机号、邮箱或本机绝对路径。
