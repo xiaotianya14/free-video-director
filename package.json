@@ -1,0 +1,38 @@
+{
+  "name": "dsh-skill-free-video-director",
+  "version": "0.0.1",
+  "description": "免费视频导演：用豆包 App 免费额度 + 本地 FFmpeg 做产品短片的完整导演流程技能（代码 MIT；知识库 Apache-2.0 来自 DirectorX）",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "xiaotianya14",
+  "keywords": [
+    "dsh-plugin",
+    "dsh-skill",
+    "skill",
+    "video",
+    "short-video",
+    "ffmpeg",
+    "video-production",
+    "free"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "files": [
+    "lib",
+    "SKILL.md",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "cordis.patch.yml",
+    "docs",
+    "NOTICE",
+    "LICENSE-APACHE-2.0.txt"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "platform": "android-arm64-proot-ubuntu",
+  "tools": [
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "why": "剪辑/拼接/字幕/转码（2D、3D 成片都必须）",
+      "check": "ffmpeg -version",
+      "min": "6.0",
+      "install": { "kind": "apt", "package": "ffmpeg", "size_mb": 60 },
+      "smoke": "ffmpeg -y -f lavfi -i color=c=black:s=64x64:d=1 -frames:v 1 /tmp/_env_ff.png && test -s /tmp/_env_ff.png",
+      "required": true
+    },
+    {
+      "id": "ffprobe",
+      "name": "FFprobe",
+      "why": "读视频规格（分辨率/帧率/时长/编码）",
+      "check": "ffprobe -version",
+      "min": "6.0",
+      "install": { "kind": "apt", "package": "ffmpeg", "size_mb": 0 },
+      "smoke": "ffprobe -version >/dev/null",
+      "required": true
+    },
+    {
+      "id": "python3",
+      "name": "Python 3",
+      "why": "2D 文字层、字幕、批处理",
+      "check": "python3 -V",
+      "min": "3.10",
+      "install": { "kind": "apt", "package": "python3", "size_mb": 30 },
+      "smoke": "python3 -c 'print(1)'",
+      "required": true
+    },
+    {
+      "id": "pillow",
+      "name": "Pillow (PIL)",
+      "why": "2D 叠字/描边/合成，保证中文一字不错",
+      "check": "python3 -c 'import PIL;print(PIL.__version__)'",
+      "min": "9.0",
+      "install": { "kind": "apt", "package": "python3-pil", "size_mb": 5 },
+      "smoke": "python3 -c 'from PIL import Image;Image.new(\"RGB\",(8,8)).save(\"/tmp/_env_pil.png\")'",
+      "required": true
+    },
+    {
+      "id": "blender",
+      "name": "Blender（3D）",
+      "why": "3D 场景渲染、产品旋转、3D 底图（EEVEE）",
+      "check": "blender --version",
+      "min": "3.6",
+      "install": { "kind": "apt", "package": "blender", "size_mb": 220, "fallback": "https://mirrors.aliyun.com/blender/release/" },
+      "smoke": "blender -b --factory-startup --python-expr 'import bpy;print(\"BLENDER_SMOKE_OK\")' 2>/dev/null | grep -q BLENDER_SMOKE_OK",
+      "required": false,
+      "note": "手机 proot 内 EEVEE 可用；无 GPU 时用 CPU，渲染小分辨率/少采样"
+    },
+    {
+      "id": "cjk-font",
+      "name": "中文字体（Noto Sans CJK）",
+      "why": "2D 字幕与标题渲染，缺字会变方框",
+      "check": "fc-list :lang=zh | head -1",
+      "min": "1",
+      "install": { "kind": "apt", "package": "fonts-noto-cjk", "size_mb": 60 },
+      "smoke": "fc-list :lang=zh | grep -qi 'Noto\\|WenQuanYi\\|Droid'",
+      "required": true
+    }
+  ]
+}
